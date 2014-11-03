@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{%block content %}
+    
+  <h1>Sex Management</h1>
+
+<p style="float: right;"><a class="btn btn-primary" href="{{path('create_sex')}}">Add New</a></p>
+
+
+  <div class="table-responsive"> 
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Sex</th> 
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+	{% for sex in sexes %}
+ 		<tr>
+            <td>{{loop.index}}</td>      
+            <td> <a href="{{path('update_sex', {'id':sex.id})}}"> {{ sex.description|capitalize }} </a> </td>
+            <td> <a href="{{path('delete_sex', {'id':sex.id})}}"><span class="anchor icon-remove"></span></a> </td>
+        </tr> 
+	{% endfor %}
+
+       </tbody>
+    </table>
+  </div>
+  
+{% endblock %}

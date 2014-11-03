@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+              <div class="wrapper">
+
+                <form action="{{ path('login_check') }}" method="post" role="form" class="form-signin">
+                
+                <h2 class="form-signin-heading"> Club Database Login </h2>
+
+                {% if message %}
+                    <div>{{ message }}</div>                    
+                {% endif %}
+
+                <input name="_username" type="email" class="form-control auth" placeholder="Email" required autofocus>
+                
+                <input name="_password" type="password" class="form-control auth" placeholder="Password" required>
+               
+                <label class="checkbox">
+                    <input name="_remember_me" type="checkbox" value="remember-me" id="rememberMe">
+                    Remember me
+                </label>
+               
+                <button class="btn btn-primary" type="submit">
+                    Sign in</button>
+                {% if userCount > 0 %}
+                    <span style="float: right;"><a href="{{path('forgotPassword')}}">Forgot Password?</a></span>
+                {% else %}
+                    <span style="float: right;"> <a href="{{ path('create_superuser') }}"> Create New User </a> </span>
+                    
+                {% endif %}
+
+                </form>
+
+                </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+{%block content %}    
+<h1>Add/Edit Record</h1>
+
+   
+        
+          {% if entity.photo.name is defined %}  
+          <img src="{{ asset('Uploads/documents/' ~ entity.photo.name) }}">
+          {% endif %}
+        {{form_start(form)}}
+        
+        {{ form_label(form.name) }}
+        {{form_widget(form.name)}}
+        <br>
+        {{ form_label(form.surname) }}
+        {{form_widget(form.surname)}}
+        <br>
+        {{ form_label(form.email) }}
+        {{form_widget(form.email)}}
+        <br>
+        {{ form_label(form.dob) }}
+        {{ form_widget(form.dob)}}
+        <br>
+        {{form(form)}}
+        
+        {{form_end(form)}}    
+
+{% endblock %}

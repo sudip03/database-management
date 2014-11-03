@@ -1,0 +1,105 @@
+cdm_user_homepage:
+    path:     /
+    defaults: { _controller: CdmUserBundle:Auth:login }
+
+invite_user:
+    path:     user/invite
+    defaults: { _controller: CdmUserBundle:User:invite }
+
+login:
+    pattern: /login
+    defaults: { _controller: CdmUserBundle:Auth:login}
+
+login_check:
+    pattern: /login_check 
+
+logout:
+    pattern: /logout
+
+forgotPassword:
+    pattern: /forgotpassword
+    defaults: { _controller: CdmUserBundle:Auth:forgotPassword}
+
+resetPassword:
+    pattern: /resetpassword/{token}
+    defaults: { _controller: CdmUserBundle:Auth:resetPassword}
+
+dashboard:
+    path:     /user/profile
+    defaults: { _controller: CdmUserBundle:Entity:read}
+
+update_profile:
+    path:     /user/profile/update/{id}
+    defaults: { _controller: CdmUserBundle:Entity:update}
+
+delete_profile:
+    path:     /user/profile/delete/{id}
+    defaults: { _controller: CdmUserBundle:Entity:delete}
+    
+create_entity:
+    path:     /user/create
+    defaults: { _controller: CdmUserBundle:Entity:create}
+
+create_superuser:
+    path:     /superuser/create
+    defaults: { _controller: CdmUserBundle:Entity:create}
+
+create_group:
+    path:     /user/group/create
+    defaults: { _controller: CdmUserBundle:Group:create}
+
+create_group_superuser:
+    path:     /superuser/group/create
+    defaults: { _controller: CdmUserBundle:Group:create}
+    
+update_group:
+    path:     /user/group/update/{id}
+    defaults: { _controller: CdmUserBundle:Group:update}
+
+delete_group:
+    path:     /user/group/delete/{id}
+    defaults: { _controller: CdmUserBundle:Group:delete}
+
+read_group:
+    path:     /user/group
+    defaults: { _controller: CdmUserBundle:Group:read}
+
+create_sex:
+    path:     /user/sex/create
+    defaults: { _controller: CdmUserBundle:Sex:create}
+
+create_sex_superuser:
+    path:     /superuser/sex/create
+    defaults: { _controller: CdmUserBundle:Sex:create}
+    
+update_sex:
+    path:     /user/sex/update/{id}
+    defaults: { _controller: CdmUserBundle:Sex:update}
+
+delete_sex:
+    path:     /user/sex/delete/{id}
+    defaults: { _controller: CdmUserBundle:Sex:delete}
+
+read_sex:
+    path:     /user/sex
+    defaults: { _controller: CdmUserBundle:Sex:read}
+
+create_role:
+    path:     /user/role/create
+    defaults: { _controller: CdmUserBundle:Role:create}
+
+create_role_superuser:
+    path:     /superuser/role/create
+    defaults: { _controller: CdmUserBundle:Role:create}
+
+update_role:
+    path:     /user/role/update/{id}
+    defaults: { _controller: CdmUserBundle:Role:update}
+
+read_role:
+    path:     /user/role
+    defaults: { _controller: CdmUserBundle:Role:read}
+
+delete_role:
+    path:     /user/role/delete/{id}
+    defaults: { _controller: CdmUserBundle:Role:delete}

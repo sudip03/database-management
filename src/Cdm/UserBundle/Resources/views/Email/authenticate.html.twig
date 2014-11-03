@@ -1,0 +1,19 @@
+<b>Dear User</b>
+
+<br><br><br>
+
+{{options['content']}}
+
+<br><br>
+
+{% if options['token'] is defined %}
+
+    {% if options['action']=='forgotpassword' %}
+    	<a href="{{url('resetPassword', {'token': options['token']})}}"> Reset Password </a>
+    {% endif %}
+
+{% endif %}
+
+<br><br><br>
+
+Thanks

@@ -1,0 +1,7 @@
+parameters:
+#    cdm_user.example.class: Cdm\UserBundle\Example
+
+services:
+#    cdm_user.example:
+#        class: %cdm_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

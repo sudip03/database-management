@@ -1,0 +1,8 @@
+common:
+    resource: "@CommonBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cdm_user:
+    resource: "@CdmUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
